@@ -5,6 +5,7 @@ import com.waites.moviereview.models.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,6 +39,14 @@ public class MovieController {
         Movie movie = new Movie(title, genre, imdblink, releasedate, imageurl);
         movieRepo.save(movie);
         return "redirect:/";
+    }
+
+    @RequestMapping("/movie/{movieId}")
+    public String movieDetail (@PathVariable("movieId") long id,
+                               Model model){
+        Movie movie = movieRepo.findOne(id);
+        model.addAttribute("movie", movie);
+        return "movieDetail";
     }
 
 
