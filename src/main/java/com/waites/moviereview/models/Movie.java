@@ -14,18 +14,19 @@ public class Movie {
     private String title;
     private String genre;
     private String imdblink;
-    private Date releasedate;
+    private String releasedate;
     private String imageurl;
 
     public Movie() {
 
     }
 
-    public Movie(String title, String genre, String imdblink, Date releasedate) {
+    public Movie(String title, String genre, String imdblink, String releasedate, String imageurl) {
         this.title = title;
         this.genre = genre;
         this.imdblink = imdblink;
         this.releasedate = releasedate;
+        this.imageurl = imageurl;
     }
 
     public long getId() {
@@ -60,11 +61,11 @@ public class Movie {
         this.imdblink = imdblink;
     }
 
-    public Date getReleasedate() {
+    public String getReleasedate() {
         return releasedate;
     }
 
-    public void setReleasedate(Date releasedate) {
+    public void setReleasedate(String releasedate) {
         this.releasedate = releasedate;
     }
 
