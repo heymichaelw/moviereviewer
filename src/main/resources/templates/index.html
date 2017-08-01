@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}" />
+    <title>Movie Reviewer</title>
+</head>
+<body class="container">
+    <h1>Welcome to the Movie Reviewer!</h1>
+
+    <div class="row">
+        <div class="col-md-4" th:each="movie : ${movies}">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title" th:text="${movie.title}">Panel title</h3>
+                </div>
+                <div class="panel-body">
+                    <div th:text="${movie.genre}"></div>
+                    <img th:src="${movie.imageurl}" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
