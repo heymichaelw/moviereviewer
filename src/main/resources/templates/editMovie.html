@@ -18,25 +18,25 @@
         <div class="form-group row">
             <label for="movieGenre" class="col-sm-2 col-form-label">Genre</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="movieGenre" name="movieGenre" />
+                <input type="text" class="form-control" id="movieGenre" name="movieGenre" th:value="${movie.genre}" />
             </div>
         </div>
         <div class="form-group row">
             <label for="movieLink" class="col-sm-2 col-form-label">IMDB URL</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="movieLink" name="movieLink" />
+                <input type="text" class="form-control" id="movieLink" name="movieLink" th:value="${movie.imdblink}" />
             </div>
         </div>
         <div class="form-group row">
             <label for="movieRelease" class="col-sm-2 col-form-label">Release Date</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="movieRelease" name="movieRelease" />
+                <input type="date" class="form-control" id="movieRelease" name="movieRelease" th:value="${movie.releasedate}" />
             </div>
         </div>
         <div class="form-group row">
             <label for="movieImage" class="col-sm-2 col-form-label">Image URL</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="movieImage" name="movieImage" />
+                <input type="text" class="form-control" id="movieImage" name="movieImage" th:value="${movie.imageurl}" />
             </div>
         </div>
         <input type="submit" class="btn btn-success" value="Edit Movie" />

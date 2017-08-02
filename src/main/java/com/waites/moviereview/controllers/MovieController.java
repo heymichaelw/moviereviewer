@@ -58,7 +58,17 @@ public class MovieController {
     }
 
     @RequestMapping(value = "/editMovie/{movieId}", method = RequestMethod.POST)
-    public String editMoviePost (@PathVariable("movieId") long id){
+    public String editMoviePost (@PathVariable("movieId") long id,
+                                 @RequestParam("movieTitle") String title,
+                                 @RequestParam("movieGenre") String genre,
+                                 @RequestParam("movieLink") String imdblink,
+                                 @RequestParam("movieRelease") String releasedate,
+                                 @RequestParam("movieImage") String imageurl){
+        Movie movie = movieRepo.findOne(id);
+        movie.setAll(title, genre, imdblink, releasedate, imageurl);
+        movieRepo.save(movie);
+
+
         return "redirect:/movie/{movieId}";
     }
 

@@ -76,4 +76,12 @@ public class Movie {
     public void setImageurl(String imageurl) {
         this.imageurl = imageurl;
     }
+
+    public void setAll(String title, String genre, String imdblink, String releasedate, String imageurl){
+        this.title = title;
+        this.genre = genre;
+        this.imdblink = imdblink;
+        this.releasedate = releasedate;
+        this.imageurl = imageurl;
+    }
 }
