@@ -49,6 +49,19 @@ public class MovieController {
         return "movieDetail";
     }
 
+    @RequestMapping("/editMovie/{movieId}")
+    public String editMovie (@PathVariable("movieId") long id,
+                             Model model){
+        Movie movie = movieRepo.findOne(id);
+        model.addAttribute("movie", movie);
+        return "editMovie";
+    }
+
+    @RequestMapping(value = "/editMovie/{movieId}", method = RequestMethod.POST)
+    public String editMoviePost (@PathVariable("movieId") long id){
+        return "redirect:/movie/{movieId}";
+    }
+
 
 
 
